@@ -1,0 +1,37 @@
+.ss{
+    color: #0884e6;
+}
+.ss1{
+    color: #e4cf14;
+}
+.ss2{
+    color: #039609;
+}
+.ss3{
+    color: #e62012;
+}
+.ss4{
+    color: #0d79d0;
+}
+.ss5{
+    color: red;
+}
+.ss4{
+    color: #9C27B0;
+}
+th{
+    font-weight: normal;
+}
+th,td{
+    padding: 8px 8px;
+}
+.num{
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.numText{
+
+    font-weight: bolder;
+    text-transform: uppercase;
+}

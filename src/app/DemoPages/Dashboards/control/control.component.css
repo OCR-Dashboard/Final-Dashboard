@@ -1,0 +1,16 @@
+.play-btn{
+    background-color: transparent;
+    border:none;
+    color: red;
+    box-shadow: none;
+    outline: none;
+    font-size: 13px;
+    }
+    .play-btn:focus{
+    outline: none;
+    }
+    select:focus{
+        border:2px solid lightgreen !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
