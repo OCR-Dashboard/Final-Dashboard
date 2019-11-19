@@ -14,7 +14,7 @@
     color: #0d79d0;
 }
 .ss5{
-    color: red;
+    color: #ff0000;
 }
 .ss4{
     color: #9C27B0;
@@ -31,7 +31,6 @@ th,td{
     margin-right: 20px;
 }
 .numText{
-
-    font-weight: bolder;
+    font-weight: 600;
     text-transform: uppercase;
 }
