@@ -59,6 +59,8 @@ import { ControlComponent } from './DemoPages/Dashboards/control/control.compone
 import { Funny1Component } from './DemoPages/Elements/funny1/funny1.component';
 import { ManagementComponent } from './DemoPages/Dashboards/management/management.component';
 import { BAUComponent } from './DemoPages/Elements/bau/bau.component';
+import { ESRComponent } from './DemoPages/Elements/esr/esr.component';
+import { ResourcesComponent } from './DemoPages/Elements/resources/resources.component';
 
 
 
@@ -93,6 +95,8 @@ const routes: Routes = [
       {path: 'elements/timeline', component: TimelineComponent, data: {extraParameter: 'elementsMenu'}},
       {path:'elements/funny1',component:Funny1Component, data: {extraParameter: 'elementsMenu'}},
       {path:'elements/bau',component:BAUComponent,data: {extraParameter: 'elementsMenu'}},
+      {path:'elements/esr',component:ESRComponent,data:{extraParameter:'elementsMenu'}},
+      {path:'elements/resources',component:ResourcesComponent,data:{extraParameter:'elementsmenu'}},
 
       // Components
 

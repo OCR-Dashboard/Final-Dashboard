@@ -42,6 +42,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   box-shadow: $sidebar-box-shadow;
   flex-direction: column;
   transition: all .3s ease;
+  
 
   .app-header__logo {
     padding: 0 $layout-spacer-x;
@@ -100,8 +101,10 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   padding: 0 $layout-spacer-x $layout-spacer-x;
 
   %side-link-hover {
-    background: $dropdown-link-hover-bg;
-    color: $primary;
+    // background: $dropdown-link-hover-bg;
+    // color: $primary;
+    color: #2a2a2e;
+    background: hsl(211, 27%, 39%);
   }
 
   & .vsm-link {
@@ -162,7 +165,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     top: 50%;
     margin-top: -17px;
     font-size: 1.5rem;
-    opacity: .3;
+    // opacity: .3;
     transition: color 300ms;
   }
 

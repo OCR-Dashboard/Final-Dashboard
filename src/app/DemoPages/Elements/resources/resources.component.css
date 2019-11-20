@@ -1,0 +1,39 @@
+.square{
+    height: 80px;
+    width: 80px;
+    background: white;
+    border: .5px solid rgb(253, 118, 118);
+    text-align: center;
+   line-height: 80px;
+   transform: rotate(45deg);
+   border-radius: 10px;
+}
+.square:hover{
+    border: .5px solid red;
+}
+.num{
+    font-weight: 600;
+    font-size: 30px;
+    transform: rotate(-45deg);
+}
+.dought-chart{    
+    width:500px;
+    height: auto;
+    margin-left: -110px;    
+}
+.badge{
+    font-weight: normal;
+    font-size: 14px;
+border-radius: 10px;
+width:40px;
+padding: 4px;
+}
+.card-body{
+    height: 317px;
+}
+.fa-check{
+    font-size: 8px;
+}
+.bo-btn{
+    cursor:default !important;
+}

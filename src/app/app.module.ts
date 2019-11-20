@@ -114,7 +114,11 @@ import { FunnyComponent } from './Elements/funny/funny.component';
 import { Funny1Component } from './DemoPages/Elements/funny1/funny1.component';
 import { ManagementComponent } from './DemoPages/Dashboards/management/management.component';
 import { BAUComponent } from './DemoPages/Elements/bau/bau.component';
-
+import { ESRComponent } from './DemoPages/Elements/esr/esr.component';
+import { ResourcesComponent } from './DemoPages/Elements/resources/resources.component';
+import { ChartModule } from 'angular2-chartjs';
+// For MDB Angular Free
+import {MatTableModule} from '@angular/material/table';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -129,7 +133,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BaseLayoutComponent,
     PagesLayoutComponent,
     PageTitleComponent,
-
     // HEADER
 
     HeaderComponent,
@@ -225,6 +228,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
     BAUComponent,
 
+    ESRComponent,
+
+    ResourcesComponent,
+
  
   ],
   imports: [
@@ -234,6 +241,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgReduxModule,
     CommonModule,
     LoadingBarRouterModule,
+    MatTableModule,
 
     // Angular Bootstrap Components
 
@@ -247,6 +255,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     // Charts
 
     ChartsModule,
+    ChartModule,
   ],
   providers: [
     {

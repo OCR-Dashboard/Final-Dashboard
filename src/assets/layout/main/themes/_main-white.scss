@@ -32,7 +32,9 @@ $app-header-logo-bg: rgba(255, 255, 255, .9);
   .app-sidebar .app-header__logo,
   .app-footer .app-footer__inner,
   .app-header {
-    background: $app-header-bg;
+    // background: $app-header-bg;
+    // background: #2e6788;
+    background: #3498db;
   }
 
 }

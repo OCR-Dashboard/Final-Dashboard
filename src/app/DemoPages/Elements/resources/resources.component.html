@@ -1,0 +1,121 @@
+
+<div class="container m-0">
+<div class="btn btn-block bg-primary text-white bo-btn"><h5 class="mt-1">Business Operations</h5></div>
+<div class="row mt-4">
+<div class="col-6">
+  <div class="card text-center ">
+    <div class="card-body">   
+    <h6 class="font-weight-bolder">Weakly exclusive summary</h6> 
+<div>
+    <chart class="line-chart" [type]="'line'" [data]="Data1" [options]="Options" ></chart>
+</div>
+
+  </div>
+</div>
+
+</div>
+<div class="col-6">
+  <div class="card text-center ">
+      <div class="card-body"> 
+    <h6 class="font-weight-bolder">Current Process Volume</h6>
+    <div>
+        <chart class="bar-chart" [type]="'bar'" [data]="Data2" [options]="Options" ></chart>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-4">
+      <div class="card text-center ">
+        <div class="card-body">
+        <h6 class="font-weight-bolder">Critical Issues</h6>
+<div class="text-center">
+        <chart class="dought-chart" [type]="'doughnut'" [data]="Data" [options]="Options"></chart>
+</div>
+      </div>
+    </div>
+    </div>
+    <div class="col-5">
+      <div class="card text-center">
+    <div class="card-body ">
+          <h6 class="font-weight-bolder">Exceptions Summary</h6>
+          <div class="row d-flex align-items-center mt-5 p-1">
+          
+          <div class="col-4">
+          <div class="square shadow">
+            <p class="num">45</p>
+          </div>
+          <p class="mt-4">Business Exceptions</p>
+          </div>
+          <div class="col-4">
+            <div class="square shadow">
+              <p class="num">28</p>
+            </div>
+            <p class="mt-4">System Exceptions</p>
+          </div>
+          <div class="col-4">
+            <div class="square shadow">
+                <p class="num">28</p>
+              </div>
+              <p class="mt-4">Technical Exceptions</p>
+              </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-3">
+        <div class="card text-center">
+      <div class="card-body p-0">
+          <h6 class="font-weight-bolder py-3">Total BOTS-96 </h6>
+
+          <table class="table table-striped table-hover">
+              <thead>              
+              </thead>
+              <tbody>
+                <tr>   
+                    <td class="d-flex justify-content-between"><span><i class="fas fa-check mr-2"></i>RUNNING </span> 
+                    <span class="badge badge-success">68</span></td>                 
+                </tr>
+
+                <tr>
+                    <td class="d-flex justify-content-between"><span><i class="fas fa-check mr-2"></i>ON HOLD </span> 
+                      <span class="badge badge-dark">10</span></td>                      
+                  </tr>
+
+                  <tr>
+                      <td class="d-flex justify-content-between"><span><i class="fas fa-check mr-2"></i>SUSPENDED </span> 
+                        <span class="badge badge-warning ">04</span></td>                   
+                    </tr>
+
+                    <tr>
+                        <td class="d-flex justify-content-between"><span><i class="fas fa-check mr-2"></i>IDLE </span> 
+                          <span class="badge badge-info">12</span></td>                      
+                     </tr>
+                     <tr>
+                        <td class="d-flex justify-content-between"><span><i class="fas fa-check mr-2"></i>ISSUE </span> 
+                          <span class="badge badge-primary">62</span></td>                      
+                     </tr>
+                </tbody>
+          </table>
+          <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="position">
+                  <th *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+          <ng-container matColumnDef="symbol">
+              <th *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table> -->
+
+      </div>
+    </div>
+      </div>
+    </div>
+</div>

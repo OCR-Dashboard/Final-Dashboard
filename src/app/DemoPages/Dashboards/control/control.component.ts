@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ControlComponent implements OnInit {
   constructor() { }
 
-  ngOnInit() {
+   ngOnInit() {}
   // buttoncode();
   // function buttoncode(){
   //   let play = true;
@@ -28,8 +28,6 @@ export class ControlComponent implements OnInit {
   //     }
   //     }		 		 
   //   })
-
   // }
-  }
- 
+    
 }

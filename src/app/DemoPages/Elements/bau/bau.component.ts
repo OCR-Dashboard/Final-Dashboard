@@ -16,7 +16,6 @@ export class BAUComponent implements OnInit {
 
   ngOnInit() {
 
-
     this.massPopChart1 = new Chart('myChart1', {
       type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
       data:{  
@@ -62,7 +61,7 @@ export class BAUComponent implements OnInit {
       }
       },
       tooltips:{
-      enabled:false
+      enabled:true
       }
       }
     });
@@ -112,7 +111,7 @@ export class BAUComponent implements OnInit {
       }
       },
       tooltips:{
-      enabled:false
+        enabled:true
       }
       }
     });
@@ -162,7 +161,7 @@ export class BAUComponent implements OnInit {
       }
       },
       tooltips:{
-      enabled:false
+      enabled:true
       }
       }
     });
