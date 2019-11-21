@@ -17,11 +17,11 @@ export class BAUComponent implements OnInit {
   ngOnInit() {
 
     this.massPopChart1 = new Chart('myChart1', {
-      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
+      type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
       data:{  
-     labels:['Approved'],    
+    //  labels:['Approved'],    
       datasets:[{
-      label:'Approved',
+      // label:'Approved',
       data:[
       20,
       50,
@@ -29,9 +29,9 @@ export class BAUComponent implements OnInit {
       ],
       //backgroundColor:'green',
       backgroundColor:[
-      '#039609', 
-       '#e62012',              
-      '#e4cf14'
+        'rgba(0, 184, 148,1.0)',
+        'rgba(253, 203, 110,1.0)',
+        'rgba(225, 112, 85,1.0)'
       ],
       borderWidth:1,
       borderColor:'#fff',
@@ -67,11 +67,11 @@ export class BAUComponent implements OnInit {
     });
 
     this.massPopChart2 = new Chart('myChart2', {
-      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{  
-      labels:['Rejected'],    
+      // labels:['Rejected'],    
       datasets:[{
-      label:'Rejected',
+      // label:'Rejected',
       data:[
       30,
       20,
@@ -79,9 +79,9 @@ export class BAUComponent implements OnInit {
       ],
       //backgroundColor:'green',
       backgroundColor:[
-        '#e4cf14',
-      '#039609',
-      '#e62012'
+        'rgba(0, 184, 148,1.0)',
+        'rgba(253, 203, 110,1.0)',
+        'rgba(225, 112, 85,1.0)'
       ],
       borderWidth:1,
       borderColor:'#fff',
@@ -116,11 +116,11 @@ export class BAUComponent implements OnInit {
       }
     });
     this.massPopChart3 = new Chart('myChart3', {
-      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
-      labels:['Reassigned'],
+      // labels:['Reassigned'],
       datasets:[{
-        label:'Reassigned',
+        // label:'Reassigned',
       data:[
       40,
       20,
@@ -128,9 +128,9 @@ export class BAUComponent implements OnInit {
       ],
       //backgroundColor:'green',
       backgroundColor:[
-       '#e62012' ,
-       '#039609',  
-      '#e4cf14',        
+        'rgba(0, 184, 148,1.0)',
+        'rgba(253, 203, 110,1.0)',
+        'rgba(225, 112, 85,1.0)'       
       
       ],
       borderWidth:1,
