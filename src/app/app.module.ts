@@ -119,7 +119,8 @@ import { ResourcesComponent } from './DemoPages/Elements/resources/resources.com
 import { ChartModule } from 'angular2-chartjs';
 // For MDB Angular Free
 import {MatTableModule} from '@angular/material/table';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {NgCircleProgressModule} from 'ng-circle-progress';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -242,7 +243,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CommonModule,
     LoadingBarRouterModule,
     MatTableModule,
-
+    MatProgressBarModule,
     // Angular Bootstrap Components
 
     PerfectScrollbarModule,
@@ -256,6 +257,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
     ChartsModule,
     ChartModule,
+    NgCircleProgressModule.forRoot()
   ],
   providers: [
     {

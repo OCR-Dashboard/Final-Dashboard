@@ -1,0 +1,46 @@
+.card{
+    border: none;
+    background: none;
+}
+.card-body{
+    padding: 8px;
+}
+.cd1{
+background: #3b54eb;
+color: #fff;
+}
+.cd2{
+    background: #f98929;
+    color: #fff;
+}
+.cd3{
+    background: #5abf62;
+    color: #fff;
+}
+.cd4{
+    background: #f73e37;
+    color: #fff;
+}
+.Progress{
+    font-size: 12px;
+}
+.operation-sec .card-body{
+border-radius: 8px;
+}
+.font-text{
+    font-size: 18px;
+    font-weight: 500;
+}
+.badge{
+    font-weight: normal;
+    font-size: 14px;
+border-radius: 10px;
+width:40px;
+padding: 4px;
+}
+.fa-check{
+    font-size: 8px;
+}
+.mat-progress-bar-fill{
+    background-color: #f1f4f6 !important;
+}
