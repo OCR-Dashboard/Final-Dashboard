@@ -23,15 +23,15 @@ export class BAUComponent implements OnInit {
       datasets:[{
       // label:'Approved',
       data:[
+      60,
       20,
-      50,
-      30,
+      20,
       ],
       //backgroundColor:'green',
       backgroundColor:[
-        'rgba(0, 184, 148,1.0)',
-        'rgba(253, 203, 110,1.0)',
-        'rgba(225, 112, 85,1.0)'
+        '#72a638',
+        '#dd5600',
+        '#2fa4e7'
       ],
       borderWidth:1,
       borderColor:'#fff',
@@ -73,15 +73,15 @@ export class BAUComponent implements OnInit {
       datasets:[{
       // label:'Rejected',
       data:[
-      30,
       20,
-      50,
+      60,
+      20,
       ],
       //backgroundColor:'green',
       backgroundColor:[
-        'rgba(0, 184, 148,1.0)',
-        'rgba(253, 203, 110,1.0)',
-        'rgba(225, 112, 85,1.0)'
+        '#72a638',
+        '#dd5600',
+        '#2fa4e7'
       ],
       borderWidth:1,
       borderColor:'#fff',
@@ -122,15 +122,15 @@ export class BAUComponent implements OnInit {
       datasets:[{
         // label:'Reassigned',
       data:[
-      40,
       20,
-      30,
+      20,
+      60,
       ],
       //backgroundColor:'green',
       backgroundColor:[
-        'rgba(0, 184, 148,1.0)',
-        'rgba(253, 203, 110,1.0)',
-        'rgba(225, 112, 85,1.0)'       
+        '#72a638',
+        '#dd5600',
+        '#2fa4e7'       
       
       ],
       borderWidth:1,

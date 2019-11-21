@@ -5,19 +5,19 @@
     color: #e4cf14;
 }
 .ss2{
-    color: #039609;
+    color: #72a638;
 }
 .ss3{
-    color: #e62012;
+    color: #f1554a;
 }
 .ss4{
     color: #0d79d0;
 }
 .ss5{
-    color: #ff0000;
+    color: #f1554a;
 }
 .ss4{
-    color: #9C27B0;
+    color: #a29bfe;
 }
 th{
     font-weight: normal;
@@ -29,8 +29,36 @@ th,td{
     font-size: 40px;
     font-weight: bold;
     margin-right: 20px;
+    color: #171c58;
 }
 .numText{
     font-weight: 600;
     text-transform: uppercase;
+}
+.btn1{
+background: #72a638;
+}
+.btn2{
+background: #dd5600;
+    
+}
+.btn3{
+background: #2fa4e7;
+    
+}
+body{
+    background: #ebeef0;
+}
+.sama-sec{
+    box-shadow: 0px 3px 7px -5px black;
+}
+.text1{
+    font-size: 20px;
+    /* background: #5b86a3; */
+    background: #033c73;
+    color: #fff;
+    border-radius: 5px;
+}
+.cell{
+    box-shadow: 0px 3px 7px -5px black;
 }
