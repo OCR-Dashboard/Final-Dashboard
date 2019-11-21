@@ -70,14 +70,6 @@ export class ResourcesComponent implements OnInit {
           'rgba(225, 112, 85,1.0)',
 
         ],
-        // borderColor: [
-        //   'rgba(255,99,132,1)',
-        //   'rgba(54, 162, 235, 1)',
-        //   'rgba(255, 206, 86, 1)',
-        //   'rgba(167, 128, 208, 1)',
-        //   'rgba(255,99,132,1)',
-
-        // ],
         borderWidth: 1,
         data: [23,35,45,58,35],
       },

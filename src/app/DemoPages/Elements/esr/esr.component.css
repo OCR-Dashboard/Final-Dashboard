@@ -1,9 +1,13 @@
+body{
+    background: #edececc9 !important;
+}
 .card{
     border: none;
     background: none;
 }
 .card-body{
     padding: 8px;
+    background: #fff;
 }
 .cd1{
 background: #3b54eb;
@@ -43,4 +47,7 @@ padding: 4px;
 }
 .mat-progress-bar-fill{
     background-color: #f1f4f6 !important;
+}
+.cell{
+    box-shadow: 0px 3px 5px -5px rgba(0,0,0,0.2);
 }

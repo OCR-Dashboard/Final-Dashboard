@@ -11,22 +11,79 @@ export class ESRComponent implements OnInit {
 
   ngOnInit() {
   }
-  Data1 = {  
-    labels: ['SUN','MON','TUE','WED','THU','FRI','SAT'],
+  piedata= {  
+    labels: ['P1', 'P2', 'P3'],
     datasets: [
       {
         label: '',
         backgroundColor: [
-         'rgba(120, 111, 166,0.5)'       
+          '#f7464a',
+            '#46bfbd',
+            '#fdb45c',            
         ],
-        borderColor: [
-           'rgba(87, 75, 144,1.0)',         
-        ],
-        borderWidth: 1,       
-        data: [12,39,45,80,25,15,12],
+       
+        borderWidth: 1,
+        data: [95, 59, 80],
       },
     ],
-   
+  }
+
+
+  bardata2= {  
+    labels: ['Bae Ajel', 'SAMA', 'Shortage', 'ES', 'OPS'],
+    datasets: [
+      {
+        labels: ['Bae Ajel', 'SAMA', 'Shortage', 'ES', 'OPS'],            
+        backgroundColor: [
+          '#5abf62',
+          '#f98929',
+          '#f73e37',
+          '#3b54eb',
+          'rgba(225, 112, 85,1.0)',
+
+        ],
+        borderWidth: 1,
+        data: [23,35,45,58,35],
+      },
+    ],
+    options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
+      }
+  }
+  }
+
+
+  Data1 = {  
+    labels: ['SUN','MON','TUE','WED','THU','FRI','SAT'],
+    datasets: [
+      {
+        label: 'Monthly Summary',
+        backgroundColor: [
+         '#fcbdcb'       
+        ],
+        borderColor: [
+           '#ff6384',         
+        ],
+        borderWidth: 2,       
+        data: [12,39,45,80,25,15,12],
+      },
+      {
+        label: 'Monthly Summary',
+        backgroundColor: [
+         '#abd7f4'       
+        ],
+        borderColor: [
+           '#36a2eb',         
+        ],
+        borderWidth: 2,       
+        data: [45,67,24,15,36,59,24],
+      },
+    ],  
     
   }
   Data2= {  
@@ -48,6 +105,9 @@ export class ESRComponent implements OnInit {
   }
  
 }
+
+
+
 
 
 
