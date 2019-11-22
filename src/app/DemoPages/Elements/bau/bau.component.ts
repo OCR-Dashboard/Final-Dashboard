@@ -17,11 +17,11 @@ export class BAUComponent implements OnInit {
   ngOnInit() {
 
     this.massPopChart1 = new Chart('myChart1', {
-      type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
+      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
       data:{  
-    //  labels:['Approved'],    
+    labels:['Approved','Rejected','Reassigned'],    
       datasets:[{
-      // label:'Approved',
+       label:'Approved',
       data:[
       60,
       20,
@@ -29,9 +29,9 @@ export class BAUComponent implements OnInit {
       ],
       //backgroundColor:'green',
       backgroundColor:[
-        '#72a638',
-        '#dd5600',
-        '#2fa4e7'
+        '#54cd98',
+        '#fca702',
+        '#44a5e7'
       ],
       borderWidth:1,
       borderColor:'#fff',
@@ -41,17 +41,18 @@ export class BAUComponent implements OnInit {
       },
       options:{
       title:{
-      display:true,
+      display:false,
       text:'',
       fontSize:0
       },
+    
       legend:{
-      display:true,
+      display:false,
       position:'top',
       labels:{
       fontColor:'#000'
-      }
-      },
+      } 
+      }, 
       layout:{
       padding:{
       left:0,
@@ -67,9 +68,9 @@ export class BAUComponent implements OnInit {
     });
 
     this.massPopChart2 = new Chart('myChart2', {
-      type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{  
-      // labels:['Rejected'],    
+      labels:['Approved','Rejected','Reassigned'] ,
       datasets:[{
       // label:'Rejected',
       data:[
@@ -79,9 +80,9 @@ export class BAUComponent implements OnInit {
       ],
       //backgroundColor:'green',
       backgroundColor:[
-        '#72a638',
-        '#dd5600',
-        '#2fa4e7'
+        '#54cd98',
+        '#fca702',
+        '#44a5e7'
       ],
       borderWidth:1,
       borderColor:'#fff',
@@ -91,12 +92,12 @@ export class BAUComponent implements OnInit {
       },
       options:{
       title:{
-      display:true,
+      display:false,
       text:'',
       fontSize:0
       },
       legend:{
-      display:true,
+      display:false,
       position:'top',
       labels:{
       fontColor:'#000'
@@ -116,9 +117,9 @@ export class BAUComponent implements OnInit {
       }
     });
     this.massPopChart3 = new Chart('myChart3', {
-      type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
-      // labels:['Reassigned'],
+        labels:['Approved','Rejected','Reassigned'],
       datasets:[{
         // label:'Reassigned',
       data:[
@@ -128,9 +129,9 @@ export class BAUComponent implements OnInit {
       ],
       //backgroundColor:'green',
       backgroundColor:[
-        '#72a638',
-        '#dd5600',
-        '#2fa4e7'       
+        '#54cd98',
+        '#fca702',
+        '#44a5e7'       
       
       ],
       borderWidth:1,
@@ -141,12 +142,12 @@ export class BAUComponent implements OnInit {
       },
       options:{
       title:{
-      display:true,
-      text:'',
+      display:false,      
       fontSize:0
       },
+   
       legend:{
-      display:true,
+      display:false,
       position:'top',
       labels:{
       fontColor:'#000'
@@ -163,7 +164,7 @@ export class BAUComponent implements OnInit {
       tooltips:{
       enabled:true
       }
-      }
+      },      
     });
 
 

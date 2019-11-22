@@ -36,14 +36,14 @@ th,td{
     text-transform: uppercase;
 }
 .btn1{
-background: #72a638;
+background: #54cd98;
 }
 .btn2{
-background: #dd5600;
+background: #fca702;
     
 }
 .btn3{
-background: #2fa4e7;
+background: #44a5e7;
     
 }
 body{
@@ -61,4 +61,8 @@ body{
 }
 .cell{
     box-shadow: 0px 3px 7px -5px black;
+}
+table{
+    overflow:scroll;
+    height:100px;
 }

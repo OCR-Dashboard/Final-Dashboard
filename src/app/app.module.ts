@@ -121,6 +121,9 @@ import { ChartModule } from 'angular2-chartjs';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {NgCircleProgressModule} from 'ng-circle-progress';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -212,28 +215,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ScatterChartComponent,
     DummyComponent,
     ApplicationcontrolComponent,
-
-  
-
     UsersComponent,
-
     ChartComponent,
-
     DelementComponent,
-
     FunnyComponent,
-
     Funny1Component,
-
     ManagementComponent,
-
     BAUComponent,
-
     ESRComponent,
-
-    ResourcesComponent,
-
- 
+    ResourcesComponent, 
   ],
   imports: [
     BrowserModule,
@@ -252,9 +242,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
+    MatFormFieldModule,
     // Charts
-
+    MatSelectModule,
     ChartsModule,
     ChartModule,
     NgCircleProgressModule.forRoot()
