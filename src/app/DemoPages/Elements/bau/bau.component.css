@@ -66,3 +66,11 @@ table{
     overflow:scroll;
     height:100px;
 }
+.contact-firsttbl{
+    color:#20a2c9;
+    font-weight: 500;
+}
+.contact-sectbl{
+    color:#9c6344 ;
+    font-weight: 500;
+}

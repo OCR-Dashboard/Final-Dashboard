@@ -51,6 +51,6 @@ padding: 4px;
 .cell{
     box-shadow: 1px 8px 5px -8px rgba(0,0,0,0.4);
 }
-.mat-progress-bar-buffer{
-    opacity: 0 !important;
+.mat-progress-bar-buffer {
+    background-color:none !important;
 }

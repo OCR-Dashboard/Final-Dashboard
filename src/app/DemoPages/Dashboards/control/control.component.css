@@ -21,3 +21,6 @@
     height: 300px;
     overflow: scroll;
 }
+td{
+    padding:0.45rem 1.25rem !important;
+}
