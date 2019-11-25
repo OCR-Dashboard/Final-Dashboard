@@ -42,6 +42,26 @@ export class ESRComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/bots/totalbots')
+    .subscribe(
+      res=>{
+        console.log("hello");
+       
+        // this.array3=res.data
+        // this.CC=this.array3.CC
+        // console.log( this.array3);
+        
+        // console.log(this.CC)
+        console.log(res.data)
+        this.totalbots=res.data;
+        this.running= this.totalbots.running
+        this.onhold= this.totalbots.onhold
+        this.suspended= this.totalbots.suspended
+        this.idle= this.totalbots.idle
+        this.issuse= this.totalbots.issuse
+        console.log(  this.totalbots.running)
+      }
+    )
 
     this.massPopChart1 = new Chart('doughnutChart', {
       type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
@@ -170,26 +190,7 @@ export class ESRComponent implements OnInit {
         console.log(this.CC)
       }
     )
-    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/bots/totalbots')
-    .subscribe(
-      res=>{
-        console.log("hello");
-       
-        // this.array3=res.data
-        // this.CC=this.array3.CC
-        // console.log( this.array3);
-        
-        // console.log(this.CC)
-        console.log(res.data)
-        this.totalbots=res.data;
-        this.running= this.totalbots.running
-        this.onhold= this.totalbots.onhold
-        this.suspended= this.totalbots.suspended
-        this.idle= this.totalbots.idle
-        this.issuse= this.totalbots.issuse
-        console.log(  this.totalbots.running)
-      }
-    )
+   
   }
 
   piedata= {  
