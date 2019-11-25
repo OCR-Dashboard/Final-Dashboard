@@ -2,3 +2,8 @@ body {
     margin: 0; 
     /* font-family: sans-serif !important;     */
   }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 24px;
+    height: 2px;
+    background-color: #fff !important;
+  }
