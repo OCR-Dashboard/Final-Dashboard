@@ -72,14 +72,16 @@ export class ControlComponent implements OnInit {
   }
 
    ngOnInit() {}
-  playStatus = true;
-  togglePlay(){
-    this.playStatus = !this.playStatus;
-  }
+ 
+ 
+  selectedButton = {}
+
+
+ 
   onSelect(selectedItem: any) {
 
     console.log("Selected item Id: ", selectedItem.id); // You get the Id of the selected item here
-  
+    this.selectedButton[selectedItem.id]= !this.selectedButton[selectedItem.id];
     localStorage.setItem('queueId',  selectedItem.id);
     console.log(this.deptid)
     console.log(selectedItem.id)
