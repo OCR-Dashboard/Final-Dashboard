@@ -19,7 +19,7 @@
   }
   
   input {
-    font-size: 15px;
+    font-size: 12px;
     border: 0;
     border-bottom: 1px solid #ccc;
     font-family: inherit;
@@ -37,7 +37,7 @@
   label {
     text-transform: lowercase; 
      letter-spacing: normal; 
-     font-size: 12px; 
+     font-size: 11px; 
      color: #2968b1;
   }
   input:placeholder-shown + label {

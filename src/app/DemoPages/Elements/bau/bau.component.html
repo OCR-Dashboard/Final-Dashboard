@@ -38,13 +38,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">AI</th>
-                  <td>48</td>
-                  <td>32</td>
-                  <td>16</td>
-                </tr>
-                <tr>
+                  <tr *ngFor="let hero of array">
+                      <th scope="row">{{hero.left_heading}}</th> 
+                     <td>{{hero.volume}}</td>
+                     <td>{{hero.volume}}</td>
+                     <td>{{hero.volume}}</td>
+                   </tr>
+                <!-- <tr>
                   <th scope="row">CAC</th>
                   <td>13</td>
                   <td>10</td>
@@ -55,7 +55,7 @@
                   <td>1496</td>
                   <td>1371</td>
                   <td>125</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
 
@@ -151,15 +151,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">ARB_CLAIMS_ARB</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>17</td>
+                    <tr *ngFor="let hero of array1">
+                        <td >{{hero.left_heading}}</td>
+                        <td>{{hero.completed}}</td>
+                        <td>{{hero.exception}}</td>
+                        <td>{{hero.pending}}</td>
+                        <td>{{hero.processing}}</td>
   
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <th scope="row">Claims_ARB_Cus_ARB</th>
                     <td>0</td>
                     <td>0</td>
@@ -193,7 +193,7 @@
                           <td>0</td>
                           <td>0</td>
                           <td>47</td>
-                        </tr>
+                        </tr> -->
                 </tbody>
               </table>
         </div>
@@ -214,15 +214,15 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">ARB_CLAIMS_ARB</th>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>17</td>
+                  <tr *ngFor="let hero of array1">
+                      <td >{{hero.left_heading}}</td>
+                      <td>{{hero.completed}}</td>
+                      <td>{{hero.exception}}</td>
+                      <td>{{hero.pending}}</td>
+                      <td>{{hero.processing}}</td>
 
                 </tr>
-                <tr>
+                <!-- <tr>
                   <th scope="row">Claims_ARB_Cus_ARB</th>
                   <td>0</td>
                   <td>0</td>
@@ -277,7 +277,7 @@
                               <td>0</td>
                               <td>0</td>
                               <td>47</td>
-                            </tr>
+                            </tr> -->
               </tbody>
             </table>
       </div>

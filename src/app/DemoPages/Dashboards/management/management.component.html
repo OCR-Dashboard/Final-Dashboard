@@ -13,27 +13,29 @@
 
 
 <form>
-<div class="container mt-5">
+<div class="container">
     <div class="btn btn-block bg-primary text-white bo-btn" style="cursor: default !important;"><h5 class="mt-1">User Management</h5></div>
 <div class="card bg-white rounded cell p-3  mt-4">
-<div class="row">  
+<div class="row"> 
+  
+    <div class=" col-6">
+        <div class="field">
+            <input type="text" id="userId" name="userId" [(ngModel)]="registerData.userId" placeholder="User Id" required>
+            <label for="userId">User Id</label>
+          </div>
+      </div>
     <div class="field col-6">
-        <input type="email" name="email" id="email" placeholder="Sample@example.com">
+        <input type="email" name="email" id="email"[(ngModel)]="registerData.email" placeholder="Sample@example.com" required>
         <label for="email">email</label>
       </div>
 
- <div class=" col-6">
-    <div class="field">
-        <input type="text" name="fullname" id="fullname" placeholder="User Id">
-        <label for="fullname">User Id</label>
-      </div>
-  </div>
+ 
 </div>
 <div class="row">
   <div class="form-group col-6">
    
     <div class="field">
-        <input type="password" name="pswd" id="pswd" placeholder="password">
+        <input type="password"  id="pswd"  name="password" [(ngModel)]="registerData.password" placeholder="password" required>
         <label for="pswd">Enter password</label>
       </div>
  
@@ -42,17 +44,15 @@
  <div class="form-group col-6">
    
     <label >Role</label>
-    <select class="form-control">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+    <select class="form-control" name="role" [(ngModel)]="registerData.role">
+      <option value="ADMIN">Admin</option>
+      <option value="MANAGEMENT">Management</option>
+      <option value="BAU">BAU</option>
     </select>
  
   </div>
 </div>
-<div class=" col-2 btn mt-4 btn-sm cell addUser-btn">ADD USER</div>
+<div class=" col-2 btn mt-4 btn-sm cell addUser-btn" (click)="registeruser()">ADD USER</div>
 </div>
 
 <div class=" card bg-white rounded cell mt-4">

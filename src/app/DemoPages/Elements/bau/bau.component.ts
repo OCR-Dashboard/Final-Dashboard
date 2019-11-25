@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
+import { HttpClient ,HttpParams} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-bau',
@@ -12,9 +14,28 @@ export class BAUComponent implements OnInit {
   massPopChart2: any;
   massPopChart3: any;
   massPopChart1: any;
-  constructor() { }
+  arraydata:any;
+
+   
+  autoLeasing: any = [];
+  watani2: any = []
+  mrcc: any = []
+  array:any;
+  array1:any;
+  array2:any;
+  constructor(private http:HttpClient){ }
 
   ngOnInit() {
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/po/getvolumereport')
+    .subscribe(
+      res=>{
+        //console.log('response===> ', res.msg);
+        
+        this.arraydata=res
+        console.log(res)
+        this.autoLeasing=this.arraydata.data.autoLeasing
+        this.watani2=this.arraydata.data.watani2
+        this.mrcc=this.arraydata.data.mrcc
 
     this.massPopChart1 = new Chart('myChart1', {
       type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
@@ -23,9 +44,9 @@ export class BAUComponent implements OnInit {
       datasets:[{
        label:'Approved',
       data:[
-      60,
-      20,
-      20,
+        this.autoLeasing.approved,
+        this.autoLeasing.rejected,
+        this.autoLeasing.reassigned
       ],
       //backgroundColor:'green',
       backgroundColor:[
@@ -74,9 +95,11 @@ export class BAUComponent implements OnInit {
       datasets:[{
       // label:'Rejected',
       data:[
-      20,
-      60,
-      20,
+        this.watani2.approved,
+        this.watani2.rejected,
+        this.watani2.reassigned
+
+        
       ],
       //backgroundColor:'green',
       backgroundColor:[
@@ -123,9 +146,10 @@ export class BAUComponent implements OnInit {
       datasets:[{
         // label:'Reassigned',
       data:[
-      20,
-      20,
-      60,
+        this.mrcc.approved,
+
+        this.mrcc.rejected,
+        this.mrcc.reassigned
       ],
       //backgroundColor:'green',
       backgroundColor:[
@@ -166,6 +190,34 @@ export class BAUComponent implements OnInit {
       }
       },      
     });
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/cc/getmsdvolumereport')
+    .subscribe(
+      res=>{
+        console.log("hello");
+       
+        this.array=res.data
+        console.log( this.array);
+      }
+    )
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/bo/samareports')
+    .subscribe(
+      res=>{
+        console.log("hello");
+       
+        this.array1=res.data
+        console.log( this.array1);
+      }
+    )
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/to/gettardeeports')
+    .subscribe(
+      res=>{
+        console.log("hello");
+       
+        this.array2=res.data
+        console.log( this.array2);
+      }
+    )
+  })
 
 
   }
