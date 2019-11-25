@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormControl, Validators } from '@angular/forms';
 import{AuthService} from '../../../auth.service';
 import { HttpClient } from '@angular/common/http';
+import { DialogboxComponent } from 'src/app/dialogbox/dialogbox.component';
+import { Dialogbox1Component } from '../../Elements/dialogbox1/dialogbox1.component';
+import { Dialogbox3Component } from '../../Elements/dialogbox3/dialogbox3.component';
+import{NgForm} from '@angular/forms'
 
 @Component({
   selector: 'app-management',
@@ -15,10 +20,20 @@ export class ManagementComponent implements OnInit {
   arrayData: any = []
   message:string=''
   msg:string='Success'
-  constructor( private auth:AuthService,private _httpclient:HttpClient) { }
+  constructor( private auth:AuthService,private _httpclient:HttpClient,public dialog: MatDialog) { }
 
   ngOnInit() {
   }
+  addPost(form: NgForm){
+    console.log("form")
+    
+   
+    form.reset(); 
+}
+ 
+
+
+
   registeruser(){
     console.log(this.registerData);
     this.auth.register(this.registerData)
@@ -35,10 +50,29 @@ export class ManagementComponent implements OnInit {
 
         if(this.message==this.msg)
         {
-          alert("Registration Successfull")
-        }
+         
+            const dialogRef = this.dialog.open(Dialogbox1Component, {
+              width: '250px',
+         
+            });
+        
+            dialogRef.afterClosed().subscribe(result => {
+              console.log('The dialog was closed');
+             
+            });
+          }
+        
         else{
-          alert("User already registered with portal")
+          const dialogRef = this.dialog.open(Dialogbox3Component, {
+            width: '250px',
+       
+          });
+      
+          dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+           
+          });
+         
         }
 
         

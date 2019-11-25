@@ -8,6 +8,7 @@ import {rootReducer, ArchitectUIState} from './ThemeOptions/store';
 import {ConfigActions} from './ThemeOptions/store/config.actions';
 import {AppRoutingModule} from './app-routing.module';
 import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import {CommonModule} from '@angular/common';
@@ -124,6 +125,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {NgCircleProgressModule} from 'ng-circle-progress';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { DialogboxComponent } from './dialogbox/dialogbox.component';
+import { Dialogbox1Component } from './DemoPages/Elements/dialogbox1/dialogbox1.component';
+import { Dialogbox2Component } from './DemoPages/Element/dialogbox2/dialogbox2.component';
+import { Dialogbox3Component } from './DemoPages/Elements/dialogbox3/dialogbox3.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -224,7 +229,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ManagementComponent,
     BAUComponent,
     ESRComponent,
-    ResourcesComponent, 
+    ResourcesComponent,
+    DialogboxComponent,
+    Dialogbox1Component,
+    Dialogbox2Component,
+    Dialogbox3Component, 
   ],
   imports: [
     BrowserModule,
@@ -235,6 +244,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoadingBarRouterModule,
     MatTableModule,
     MatProgressBarModule,
+    MatDialogModule,
     // Angular Bootstrap Components
 
     PerfectScrollbarModule,

@@ -9,6 +9,17 @@ import * as Chart from 'chart.js';
 })
 export class ESRComponent implements OnInit {
   massPopChart1: any;
+  massPopChart2: any;
+  massPopChart3:any;
+  massPopChart4:any;
+  massPopChart:any;
+  Exception:any;
+  //bardata2:any
+  cpv:any;
+  cic:any;
+  BE:any;
+  SE:any;
+  TE:any;
   totalbots:any;
   running:any;
   onhold:any;
@@ -42,7 +53,11 @@ export class ESRComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
-    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/bots/totalbots')
+
+
+
+
+     this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/bots/totalbots')
     .subscribe(
       res=>{
         console.log("hello");
@@ -60,16 +75,20 @@ export class ESRComponent implements OnInit {
         this.idle= this.totalbots.idle
         this.issuse= this.totalbots.issuse
         console.log(  this.totalbots.running)
-      }
-    )
+    
 
     this.massPopChart1 = new Chart('doughnutChart', {
       type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
       data:{  
         labels: ['Running','On Hold','Suspended','Idle','Issue'],    
       datasets:[{      
-        data: [88,15,30,21,39],
-      //backgroundColor:'green',
+        data: [
+          this.running,
+          this.onhold,
+          this.suspended,
+          this.idle,
+          this.issuse   
+        ],   
       backgroundColor:[
         '#f7464a',
         '#46bfbd',
@@ -110,6 +129,8 @@ export class ESRComponent implements OnInit {
       }
       }
     });
+  }
+  )
   
 
     this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/esrc/esrbo')
@@ -124,6 +145,9 @@ export class ESRComponent implements OnInit {
         console.log(this.BO)
       }
     )
+
+
+
     this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/esrc/esrpo')
     .subscribe(
       res=>{
@@ -136,6 +160,8 @@ export class ESRComponent implements OnInit {
         console.log(this.PO)
       }
     )
+
+
     this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/esrc/esrto')
     .subscribe(
       res=>{
@@ -148,6 +174,8 @@ export class ESRComponent implements OnInit {
         console.log(this.TO)
       }
     )
+
+
     this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/esrc/esrcc')
     .subscribe(
       res=>{
@@ -160,6 +188,9 @@ export class ESRComponent implements OnInit {
         console.log(this.CC)
       }
     )
+
+
+
     this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/mesc/mesc')
     .subscribe(
       res=>{
@@ -167,136 +198,256 @@ export class ESRComponent implements OnInit {
        
         this.array3=res.data
         console.log( this.array3)
+        console.log(this.array3[0].monday.min+"min value")
 
         
         
         this.sundaymin=this.array3[0].sunday.min;
-        this.mondaymin=this.array3[0].mondaymin;
-        this.tuesdaymin=this.array3[0].tuesdaymin;
-        this.wednesdaymin=this.array3[0].wednesdaymin;
-        this.thursdaymin=this.array3[0].thursdaymin;
-        this.fridaymin=this.array3[0].fridaymin;
-        this.saturdaymin=this.array3[0].saturdamin;
+        this.mondaymin=this.array3[0].monday.min;
+        this.tuesdaymin=this.array3[0].tuesday.min;
+        this.wednesdaymin=this.array3[0].wednesday.min;
+        this.thursdaymin=this.array3[0].Thursday.min;
+        this.fridaymin=this.array3[0].friday.min;
+        this.saturdaymin=this.array3[0].saturday.min;
         this.sundaymax=this.array3[0].sunday.max;
-        this.mondaymax=this.array3[0].mondaymax;
-        this.tuesdaymax=this.array3[0].tuesdaymax;
-        this.wednesdaymax=this.array3[0].wednesdaymax;
-        this.thursdaymax=this.array3[0].thursdaymax;
-        this.fridaymax=this.array3[0].fridaymax;
-        this.saturdaymax=this.array3[0].saturdaymax;
-        console.log(   this.sundaymin+"sunday");
+        this.mondaymax=this.array3[0].monday.max;
+        this.tuesdaymax=this.array3[0].tuesday.max;
+        this.wednesdaymax=this.array3[0].wednesday.max;
+        this.thursdaymax=this.array3[0].Thursday.max;
+        this.fridaymax=this.array3[0].friday.max;
+        this.saturdaymax=this.array3[0].saturday.max;
+         console.log(   this.sundaymin+"sunday");
+        console.log(   this.mondaymax+"monday");
+
+        
 
         
         console.log(this.CC)
+        this.massPopChart = new Chart('linedata', {
+          type:'line', 
+          data:{ 
+             labels: ['SUN','MON','TUE','WED','THU','FRI','SAT'],
+         datasets: [
+            {
+              label: 'Monthly Summary',
+              backgroundColor: [
+               '#fcbdcb'       
+              ],
+             borderColor: [
+                '#ff6384',         
+             ],
+            borderWidth: 2,       
+              data: [
+              
+                this.sundaymin,
+                this.mondaymin,
+                this.tuesdaymin,
+               this.wednesdaymin,
+             
+               this.thursdaymin,
+               this.fridaymin,
+               this.saturdaymin,
+               //11,42,12,43,34,36
+           
+              
+     
+             ],
+           },
+           {
+             label: 'Weakly Summary',
+             backgroundColor: [
+              '#abd7f4'       
+             ],
+             borderColor: [
+                '#36a2eb',         
+             ],
+             borderWidth: 2,       
+             data: [
+                this.sundaymax,
+               this.mondaymax,
+               this.tuesdaymax,
+               this.wednesdaymax,
+               this.thursdaymax,
+               this.fridaymax,
+               this.saturdaymax,
+               //38,33,55,12,44,22,25
+             ],
+           },
+         ],  
+         
+          }
+      })
       }
     )
-   
-  }
-
-  piedata= {  
-    labels: ['P1', 'P2', 'P3'],
-    datasets: [
-      {
-        label: '',
-        backgroundColor: [
-          '#f7464a',
-            '#46bfbd',
-            '#fdb45c',            
-        ],
-       
-        borderWidth: 1,
-        data: [95, 59, 80],
-      },
-    ],
-  }
 
 
-  bardata2= {  
-    labels: ['Bae Ajel', 'SAMA', 'Shortage', 'ES', 'OPS'],
-    datasets: [
-      {
-        labels: ['Bae Ajel', 'SAMA', 'Shortage', 'ES', 'OPS'],            
-        backgroundColor: [
-          '#5abf62',
-          '#f98929',
-          '#f73e37',
-          '#3b54eb',
-          'rgba(225, 112, 85,1.0)',
 
-        ],
-        borderWidth: 1,
-        data: [23,35,45,58,35],
-      },
-    ],
-    baroptions: {
-      scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/exception/BusinessExeptions')
+    .subscribe(
+      res=>{
+        console.log("hello");
+      console.log(res.data);
+      this.Exception=res.data
+      console.log(this.Exception.BE)
+      this.BE=this.Exception.BE
+      console.log(this.BE)
       }
-  }
-  }
+    )
 
 
-  LineData = {  
-    labels: ['SUN','MON','TUE','WED','THU','FRI','SAT'],
-    datasets: [
-      {
-        label: 'Monthly Summary',
-        backgroundColor: [
-         '#fcbdcb'       
+
+
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/cpv/cpv')
+    .subscribe(
+      res=>{
+        console.log("hello");
+      console.log(res.data);
+      this.cpv=res.data
+      // this.Exception=res.data
+      // console.log(this.Exception.BE)
+      // this.BE=this.Exception.BE
+     console.log(this.cpv.sama)
+     this.massPopChart3 = new Chart('bardata', {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
+      data:{  
+        labels: ['Bae Ajel', 'SAMA', 'Shortage', 'ES', 'OPS'], 
+      datasets:[{      
+        data: [this.cpv.baeAgel,
+          this.cpv.sama,
+          this.cpv.shortage,
+          this.cpv.es,
+          this.cpv.ops,
+
+          
         ],
-        borderColor: [
-           '#ff6384',         
-        ],
-        borderWidth: 2,       
-        data: [
-         
-          //this.sundaymin,
-          // this.mondaymin,
-          // this.tuesdaymin,
-          // this.wednesdaymin,
-        
-          // this.thursdaymin,
-          // this.fridaymin,
-          // this.saturdaymin,
-          11,42,12,43,34,36
+      //backgroundColor:'green',
+      backgroundColor:[
+        '#5abf62',
+        '#f98929',
+       '#f73e37',
+       '#3b54eb',
+      'rgba(225, 112, 85,1.0)', 
+      ],
+      borderWidth:1,
+      borderColor:'#fff',
+      hoverBorderWidth:5,
+      hoverBorderColor:'#fff'
+      }]
+      },
+      options:{
+      title:{
+      display:false,
+      text:'',
+      fontSize:0
+      },
+      scales: {
+             yAxes: [{
+                    ticks: {
+                         beginAtZero: true
+                     }
+                 }]
+           },
+      legend:{
+      display:false,
+      position:'top',
+      labels:{
+      fontColor:'#000'
+      } 
+      }, 
+      layout:{
+      padding:{
+      left:0,
+      right:0,
+      bottom:0,
+      top:0
+      }
+      },
+      tooltips:{
+      enabled:true
+      }
+      }
+    })
+      }
+    )
+
+
+
+
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/cic/cic')
+    .subscribe(
+      res=>{
+        console.log("hello");
+      console.log(res.data);
+      this.cic=res.data
+
+      console.log(this.cic.p1)
+      this.massPopChart2 = new Chart('piedata', {
+        type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
+        data:{  
+          labels: ['P1', 'P2', 'P3'], 
+        datasets:[{      
+          data: [
+            this.cic.p1,
+            this.cic.p2,
+            this.cic.p3
+           
+          ],
       
-         
+        backgroundColor:[
+          '#f7464a',
+          '#46bfbd',
+         '#fdb45c',  
+        ],
+        borderWidth:1,
+        borderColor:'#fff',
+        hoverBorderWidth:5,
+        hoverBorderColor:'#fff'
+        }]
+        },
+        options:{
+        title:{
+        display:false,
+        text:'',
+        fontSize:0
+        },
+      
+        legend:{
+        display:false,
+        position:'top',
+        labels:{
+        fontColor:'#000'
+        } 
+        }, 
+        layout:{
+        padding:{
+        left:0,
+        right:0,
+        bottom:0,
+        top:0
+        }
+        },
+        tooltips:{
+        enabled:true
+        }
+        }
+      })
+    })
 
-        ],
-      },
-      {
-        label: 'Weakly Summary',
-        backgroundColor: [
-         '#abd7f4'       
-        ],
-        borderColor: [
-           '#36a2eb',         
-        ],
-        borderWidth: 2,       
-        data: [
-           //this.sunday.max,
-          // this.monday.max,
-          // this.tuesday.max,
-          // this.wednesday.max,
-          // this.thursday.max,
-          // this.friday.max,
-          // this.saturday.max,
-          38,33,55,12,44,22,25
-        ],
-      },
-    ],  
-    
-  }
-  
+
+
+
+
+   
+
+
 
 
 }
+  }
 
-
+      
+  
+  
 
 
 

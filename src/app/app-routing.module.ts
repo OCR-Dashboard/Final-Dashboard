@@ -61,6 +61,8 @@ import { ManagementComponent } from './DemoPages/Dashboards/management/managemen
 import { BAUComponent } from './DemoPages/Elements/bau/bau.component';
 import { ESRComponent } from './DemoPages/Elements/esr/esr.component';
 import { ResourcesComponent } from './DemoPages/Elements/resources/resources.component';
+import { Dialogbox1Component } from './DemoPages/Elements/dialogbox1/dialogbox1.component';
+import { Dialogbox3Component } from './DemoPages/Elements/dialogbox3/dialogbox3.component';
 
 
 
@@ -97,6 +99,9 @@ const routes: Routes = [
       {path:'elements/bau',component:BAUComponent,data: {extraParameter: 'elementsMenu'}},
       {path:'elements/esr',component:ESRComponent,data:{extraParameter:'elementsMenu'}},
       {path:'elements/resources',component:ResourcesComponent,data:{extraParameter:'elementsmenu'}},
+      {path:'elements/dialogbox',component:Dialogbox1Component,data:{extraParameter:'elementsmenu'}},
+      {path:'elements/dialogbox2',component:Dialogbox3Component,data:{extraParameter:'elementsmenu'}},
+
 
       // Components
 
