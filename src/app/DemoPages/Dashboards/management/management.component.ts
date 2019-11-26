@@ -28,10 +28,6 @@ export class ManagementComponent implements OnInit {
    
     form.reset(); 
 }
- 
-
-
-
   registeruser(){
     console.log(this.registerData);
     this.auth.register(this.registerData)
@@ -50,28 +46,11 @@ export class ManagementComponent implements OnInit {
         {
          
           Swal.fire('','Registration Successful','success')
-         
-        
-            // dialogRef.afterClosed().subscribe(result => {
-            //   console.log('The dialog was closed');
-             
-            // });
           }
         
         else{
-          // const dialogRef = this.dialog.open(Dialogbox3Component, {
-          //   width: '250px',
-       
-          // });
-      
-          // dialogRef.afterClosed().subscribe(result => {
-          //   console.log('The dialog was closed');
-           
-          // });
-          Swal.fire('',' User already registered with portal','error')
-         
+          Swal.fire('',' User already registered with portal','error')         
         }
-
         
       }     
     )

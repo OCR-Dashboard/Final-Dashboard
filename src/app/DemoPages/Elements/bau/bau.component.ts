@@ -38,7 +38,7 @@ export class BAUComponent implements OnInit {
         this.mrcc=this.arraydata.data.mrcc
 
     this.massPopChart1 = new Chart('myChart1', {
-      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea 
+      type:'pie', 
       data:{  
     labels:['Approved','Rejected','Reassigned'],    
       datasets:[{
@@ -48,7 +48,6 @@ export class BAUComponent implements OnInit {
         this.autoLeasing.rejected,
         this.autoLeasing.reassigned
       ],
-      //backgroundColor:'green',
       backgroundColor:[
         '#54cd98',
         '#fca702',
@@ -89,11 +88,10 @@ export class BAUComponent implements OnInit {
     });
 
     this.massPopChart2 = new Chart('myChart2', {
-      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'pie',
       data:{  
       labels:['Approved','Rejected','Reassigned'] ,
       datasets:[{
-      // label:'Rejected',
       data:[
         this.watani2.approved,
         this.watani2.rejected,
@@ -101,7 +99,6 @@ export class BAUComponent implements OnInit {
 
         
       ],
-      //backgroundColor:'green',
       backgroundColor:[
         '#54cd98',
         '#fca702',
@@ -140,18 +137,16 @@ export class BAUComponent implements OnInit {
       }
     });
     this.massPopChart3 = new Chart('myChart3', {
-      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'pie', 
       data:{
         labels:['Approved','Rejected','Reassigned'],
       datasets:[{
-        // label:'Reassigned',
       data:[
         this.mrcc.approved,
 
         this.mrcc.rejected,
         this.mrcc.reassigned
       ],
-      //backgroundColor:'green',
       backgroundColor:[
         '#54cd98',
         '#fca702',
