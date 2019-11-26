@@ -95,7 +95,7 @@
         <div class="card-body border rounded cell">
           <div class="d-flex justify-content-around align-items-center"> 
              <circle-progress
-            [percent]='45'
+            [percent]='95'
             [radius]="40"
             [outerStrokeWidth]="4"
             [innerStrokeWidth]="2"
@@ -160,7 +160,8 @@
     <div class="row mt-3">
       <div class="col-6 card">
         <div class="card-body rounded border cell p-2">
- 
+          <p class="font-text mt-2">Current Process Volume</p>
+          <hr class="bg-dark">
             <!-- <chart class="bar-chart" [type]="'bar'" [data]="bardata2"></chart> -->
             <canvas id="bardata" width="" height="auto" class="bar"></canvas>
  
@@ -172,7 +173,8 @@
       </div>
       <div class="col-6 card">
           <div class="card-body rounded border cell p-2">
- 
+            <p class="font-text mt-2">Critical Issues</p>
+            <hr class="bg-dark">
               <!-- <chart class="pie" [type]="'pie'" [data]="piedata"></chart> -->
               <canvas id="piedata" width="" height="auto" class="pie"></canvas>
  

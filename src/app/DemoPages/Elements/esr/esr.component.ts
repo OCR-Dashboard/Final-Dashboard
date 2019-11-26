@@ -229,7 +229,7 @@ export class ESRComponent implements OnInit {
              labels: ['SUN','MON','TUE','WED','THU','FRI','SAT'],
          datasets: [
             {
-              label: 'Monthly Summary',
+              label: 'Maximum',
               backgroundColor: [
                '#fcbdcb'       
               ],
@@ -254,7 +254,7 @@ export class ESRComponent implements OnInit {
              ],
            },
            {
-             label: 'Weakly Summary',
+             label: 'Minimum',
              backgroundColor: [
               '#abd7f4'       
              ],
@@ -412,7 +412,7 @@ export class ESRComponent implements OnInit {
         },
       
         legend:{
-        display:false,
+        display:true,
         position:'top',
         labels:{
         fontColor:'#000'

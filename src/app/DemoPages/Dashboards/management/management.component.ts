@@ -7,6 +7,7 @@ import { DialogboxComponent } from 'src/app/dialogbox/dialogbox.component';
 import { Dialogbox1Component } from '../../Elements/dialogbox1/dialogbox1.component';
 import { Dialogbox3Component } from '../../Elements/dialogbox3/dialogbox3.component';
 import{NgForm} from '@angular/forms'
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-management',
@@ -51,27 +52,26 @@ export class ManagementComponent implements OnInit {
         if(this.message==this.msg)
         {
          
-            const dialogRef = this.dialog.open(Dialogbox1Component, {
-              width: '250px',
+          Swal.fire('','Registration Successful','success')
          
-            });
         
-            dialogRef.afterClosed().subscribe(result => {
-              console.log('The dialog was closed');
+            // dialogRef.afterClosed().subscribe(result => {
+            //   console.log('The dialog was closed');
              
-            });
+            // });
           }
         
         else{
-          const dialogRef = this.dialog.open(Dialogbox3Component, {
-            width: '250px',
+          // const dialogRef = this.dialog.open(Dialogbox3Component, {
+          //   width: '250px',
        
-          });
+          // });
       
-          dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
+          // dialogRef.afterClosed().subscribe(result => {
+          //   console.log('The dialog was closed');
            
-          });
+          // });
+          Swal.fire('',' User already registered with portal','error')
          
         }
 
