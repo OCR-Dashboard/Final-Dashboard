@@ -231,10 +231,11 @@ export class ESRComponent implements OnInit {
             {
               label: 'Maximum',
               backgroundColor: [
-               '#fcbdcb'       
+              //  'rgba(109,226,235,.7)' 
+              'rgba(27, 156, 252,.7)'      
               ],
              borderColor: [
-                '#ff6384',         
+                'rgba(27, 156, 252,.7)',         
              ],
             borderWidth: 2,       
               data: [
@@ -247,8 +248,7 @@ export class ESRComponent implements OnInit {
                this.thursdaymin,
                this.fridaymin,
                this.saturdaymin,
-               //11,42,12,43,34,36
-           
+               //11,42,12,43,34,36      
               
      
              ],
@@ -256,10 +256,11 @@ export class ESRComponent implements OnInit {
            {
              label: 'Minimum',
              backgroundColor: [
-              '#abd7f4'       
+             // 'rgba(247,187,173,.7)'  
+             '#ccc'     
              ],
              borderColor: [
-                '#36a2eb',         
+                '#ccc',         
              ],
              borderWidth: 2,       
              data: [
