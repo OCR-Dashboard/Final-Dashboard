@@ -3,9 +3,6 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { FormControl, Validators } from '@angular/forms';
 import{AuthService} from '../../../auth.service';
 import { HttpClient } from '@angular/common/http';
-import { DialogboxComponent } from 'src/app/dialogbox/dialogbox.component';
-import { Dialogbox1Component } from '../../Elements/dialogbox1/dialogbox1.component';
-import { Dialogbox3Component } from '../../Elements/dialogbox3/dialogbox3.component';
 import{NgForm} from '@angular/forms'
 import Swal from 'sweetalert2'
 
