@@ -14,14 +14,14 @@
         <div class="content" id="toggleBtn">
             <div class="scrollable">
                 <table class="table ">
-          <tr *ngFor="let x of array1Data " class="py-4">
+          <tr *ngFor="let x of array1Data " id="tbldata" class="py-4">
           
               <td style="width: 1200px">{{x.name}}</td>             
              <td class="mr-4">
              <button type="button" id={{x.id}} (click)="onSelect(x)"class="glyphicon glyphicon-check play-btn">
                 <span *ngIf="!selectedButton[x.id]"><i class="fas fa-play text-danger"></i> </span>
                 <span *ngIf="selectedButton[x.id]"><i class="fas fa-pause text-success"></i> </span>    
-                  </button>
+              </button>
             </td>
             </tr>
         </table>

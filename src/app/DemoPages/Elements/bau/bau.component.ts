@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as Chart from 'chart.js';
 import { HttpClient ,HttpParams} from '@angular/common/http';
-
 
 @Component({
   selector: 'app-bau',
@@ -15,7 +14,9 @@ export class BAUComponent implements OnInit {
   massPopChart3: any;
   massPopChart1: any;
   arraydata:any;
-
+  @ViewChild('myId') myId: ElementRef;
+  @ViewChild('myId1') myId1: ElementRef;
+  @ViewChild('myId2') myId2: ElementRef;
    
   autoLeasing: any = [];
   watani2: any = []
@@ -25,7 +26,49 @@ export class BAUComponent implements OnInit {
   array2:any;
   constructor(private http:HttpClient){ }
 
-  ngOnInit() {
+  ngOnInit() { 
+    //infinite Scroll
+
+    var container =  this.myId.nativeElement
+    var container1 =  this.myId1.nativeElement
+    var container2 =  this.myId2.nativeElement
+
+    //credit analysis 
+   container.addEventListener('scroll',function(e){
+     var containerHeight = container.offsetHeight;
+	 	
+     var value=container.scrollTop - containerHeight
+     console.log(container.scrollTop,container.offsetHeight,container.scrollHeight); 
+     if(container.scrollTop >= (container.scrollHeight - container.offsetHeight)){
+	  	container.scrollTop =0;
+
+	 	}
+})
+//sama general file
+container1.addEventListener('scroll',function(e){
+  var container1Height = container1.offsetHeight;
+  
+  var value1=container1.scrollTop - container1Height
+  console.log(container1.scrollTop,container1.offsetHeight,container1.scrollHeight); 
+  if(container1.scrollTop >= (container1.scrollHeight - container1.offsetHeight)){
+   container1.scrollTop =0;
+
+  }
+})
+
+//sama legal file
+container2.addEventListener('scroll',function(e){
+  var container2Height = container2.offsetHeight;  
+  var value2=container2.scrollTop - container2Height
+  console.log(container2.scrollTop,container2.offsetHeight,container2.scrollHeight); 
+  if(container2.scrollTop >= (container2.scrollHeight - container2.offsetHeight)){
+   container2.scrollTop =0;
+
+  }
+})
+
+
+
     this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/po/getvolumereport')
     .subscribe(
       res=>{

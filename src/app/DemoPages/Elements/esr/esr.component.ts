@@ -291,9 +291,35 @@ export class ESRComponent implements OnInit {
       this.Exception=res.data
       console.log(this.Exception.BE)
       this.BE=this.Exception.BE
-      console.log(this.BE)
+      console.log(this.BE +"be VALUE")
       }
     )
+
+    this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/exception/systemExceptions')
+.subscribe(
+res=>{
+console.log("hello");
+console.log(res);
+this.Exception=res.data
+console.log(this.Exception.PE)
+this.SE=this.Exception.PE
+console.log(this.SE+"se is")
+}
+)
+
+
+this.http.get<{sucess: boolean, msg: string, data: {}}>('http://localhost:4000/exception/TechnicalExceptions')
+.subscribe(
+res=>{
+console.log("hello");
+console.log("te is")
+console.log(res);
+this.Exception=res.data
+console.log(this.Exception.TE)
+this.TE=this.Exception.TE
+console.log(this.TE+"se is")
+}
+)
 
 
 

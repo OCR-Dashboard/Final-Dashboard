@@ -74,3 +74,9 @@ table{
     color:#9c6344 ;
     font-weight: 500;
 }
+/* .infinitescroll{ 
+  animation: scroll 1s linear 1s infinite;    
+}
+@keyframes scroll {
+    100% { top: -360px; }
+} */

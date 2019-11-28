@@ -71,7 +71,13 @@ export class ControlComponent implements OnInit {
    }
   }
 
-   ngOnInit() {}
+   ngOnInit() {
+
+     let scrolldata=document.getElementById('tbldata');
+     let height=scrolldata.offsetHeight;
+     console.log(height);  
+     
+     }
  
  
   selectedButton = {}
